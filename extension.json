@@ -1,0 +1,10 @@
+{
+  "identifier": "arthvadrr.inlineerrors",
+  "name": "inline-errors",
+  "organization": "arthvadrr",
+  "description": "Lorem ipsum, dolor sit amet.",
+  "version": "1.0",
+  "categories": ["issues"],
+
+  "main": "main.js"
+}
