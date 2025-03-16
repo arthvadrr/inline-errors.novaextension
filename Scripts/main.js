@@ -1,18 +1,20 @@
-class IssuesProvider {
-  constructor() {}
+const InlineErrorLens = require('./inlineIssues.js');
 
-  provideIssues() {
-    let issues = [];
-    let issue = new Issue();
+exports.activate = function() {
+  console.log('✅ ErrorLens Extension Activated!');
 
-    issue.message = "Invalid syntax: Missing semicolon";
-    issue.severity = IssueSeverity.Warning;
-    issue.line = 4;
-    issue.column = 0;
-    issues.push(issue);
+  nova.workspace.onDidAddTextEditor((editor) => {
+    console.log(`📝 Editor opened: ${editor.document.path}`);
 
-    return issues;
-  }
-}
+    editor.onDidStopChanging(() => {
+      console.log(`✍️ Document changed: ${editor.document.path}`);
+      InlineErrorLens.updateIssues(editor);
+    });
+  });
 
-nova.assistants.registerIssueAssistant("*", new IssuesProvider());
+  console.log('✅ Issue Handler Registered!');
+};
+
+exports.deactivate = function() {
+  console.log('❌ ErrorLens Extension Deactivated!');
+};

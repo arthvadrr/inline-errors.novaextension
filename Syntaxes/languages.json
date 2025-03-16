@@ -1,0 +1,24 @@
+{
+  "languages": [
+    {
+      "id": "javascript",
+      "extensions": [".js", ".jsx"],
+      "assistants": ["Assistants/issues.js"]
+    },
+    {
+      "id": "typescript",
+      "extensions": [".ts", ".tsx"],
+      "assistants": ["Assistants/issues.js"]
+    },
+    {
+      "id": "css",
+      "extensions": [".css"],
+      "assistants": ["Assistants/issues.js"]
+    },
+    {
+      "id": "scss",
+      "extensions": [".scss"],
+      "assistants": ["Assistants/issues.js"]
+    }
+  ]
+}

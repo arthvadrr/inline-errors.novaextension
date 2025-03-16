@@ -1,10 +1,25 @@
 {
+  "name": "InlineErrors",
   "identifier": "arthvadrr.inlineerrors",
-  "name": "inline-errors",
-  "organization": "arthvadrr",
-  "description": "Lorem ipsum, dolor sit amet.",
   "version": "1.0",
+  "description": "Provides inline errors",
   "categories": ["issues"],
-
-  "main": "main.js"
+  "developer": {
+    "name": "arthvadrr",
+    "email": "arthvadrr.dev@gmail.com"
+  },
+  "main": "main.js",
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:css",
+    "onLanguage:scss"
+  ],
+  "contributes": {
+    "assistants": {
+      "issues": {
+        "path": "Assistants/inlineIssues.js"
+      }
+    }
+  }
 }
